@@ -8,6 +8,9 @@
 ## a. Your environment has access to gitlab and github
 ## b. Your environment already has the 2 credentials set.
 
+# How to use
+# tools/synch.sh <repo name>
+
 if [ -z "$1" ]; then
    echo "Usage: $0 <repo-name>"
    exit 1
@@ -36,8 +39,8 @@ echo "" && echo "==> git update on gitlab side" && echo ""
 cd $HOME/gitlab/$repo_name && $HOME/tools/git-run.sh
 
 echo "" && echo "==> clean up files " && echo ""
-rm -rf $HOME/gitlab/$repo_name
-rm -rf $HOME/github/$repo_name
+rm -rf $HOME/gitlab
+rm -rf $HOME/github
 
 # end of file
 
