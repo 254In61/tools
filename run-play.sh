@@ -3,7 +3,7 @@ echo "" && echo "==> Delete existing roles" && echo ""
 rm -rf $HOME/.ansible/roles
 
 echo "" && echo "==> Set env variables" && echo ""
-source ../env-vars
+source env-vars
 
 cd aap-objects-build
 git pull
