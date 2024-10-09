@@ -36,7 +36,8 @@ cp -r $HOME/github/$repo_name/* $HOME/gitlab/$repo_name
 cp $HOME/github/$repo_name/.gitignore $HOME/gitlab/$repo_name
 
 echo "" && echo "==> git update on gitlab side" && echo ""
-cd $HOME/gitlab/$repo_name && $HOME/tools/git-run.sh
+cd $HOME/gitlab/$repo_name && git add .gitignore
+$HOME/tools/git-run.sh
 
 echo "" && echo "==> clean up files " && echo ""
 rm -rf $HOME/gitlab
