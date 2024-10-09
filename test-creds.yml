@@ -1,0 +1,4 @@
+---
+# Secrets extra vars file during testing
+ansible_user: "{{ lookup('env', 'JUNOS_USN') }}"
+ansible_password: "{{ lookup('env', 'JUNOS_PWD') }}"

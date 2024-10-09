@@ -15,7 +15,7 @@ echo "" && echo "==> Pull down roles from git" && echo ""
 ansible-galaxy install -r roles/requirements.yml
 
 echo "" && echo "==> Run playbook" && echo ""
-ansible-playbook $playbook -i inventory/staging.ini -e "@secrets.yml"
+ansible-playbook $playbook -i inventory/staging.ini -e "@/tools/test-creds.yml"
 
 echo "" && echo "==> Clean up" && echo ""
 cd ..
