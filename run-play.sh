@@ -15,6 +15,8 @@ echo "" && echo "==> Pull down roles from git" && echo ""
 ansible-galaxy install -r roles/requirements.yml
 
 echo "" && echo "==> Run playbook" && echo ""
+# Ensure you move secrets.yml into $HOME...You have to be specific on the containers.
+# bash-4.4$ mv secrets.yml $HOME
 ansible-playbook $playbook -i inventory/staging.ini -e "@$HOME/secrets.yml"
 
 echo "" && echo "==> Clean up" && echo ""
