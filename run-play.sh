@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 git_repo=juniper-software-upgrade
-playbook=pre-checks.yml
+playbook=site.yml
 
 echo "" && echo "==> Delete existing roles" && echo ""
 rm -rf $HOME/.ansible/roles
