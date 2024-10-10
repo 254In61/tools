@@ -14,11 +14,11 @@ api_url = f"{aap_url}/api/v2/job_templates/{job_template_id}/launch/"
 # If using token
 # API_TOKEN = "your_api_token"
 
-# Headers for token-based authentication
-# headers = {
-#     "Authorization": f"Bearer {API_TOKEN}",
-#     "Content-Type": "application/json"
-# }
+
+headers = {
+    # "Authorization": f"Bearer {API_TOKEN}",
+    "Content-Type": "application/json"
+}
 
 # Data payload for launching the job template (optional)
 payload = {
@@ -34,7 +34,7 @@ def trigger_aap_job():
         # Make the API POST request to launch the job template
         # response = requests.post(API_URL, headers=headers, data=json.dumps(payload), verify=False)
         
-        response = requests.post(api_url, auth=(username, password), data=json.dumps(payload), verify=False)
+        response = requests.post(api_url, auth=(username, password), headers = headers, data=json.dumps(payload), verify=False)
         # Check for successful response
         if response.status_code == 201:
             print("Job template triggered successfully!")
