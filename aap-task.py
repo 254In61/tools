@@ -22,10 +22,11 @@ headers = {
 # Data payload for launching the job template (optional)
 payload = {
     # Pass extra_vars or other launch options if needed
-    # "extra_vars": {
-    #     "var1": "value1",
-    #     "var2": "value2"
-    # }
+    "extra_vars": {
+        "extra_var_1": "Extra Var #1 here",
+        "extra_var_2": "Extra Var #1 here",
+        "extra_var_3": "Extra Var #3 here"
+    }
 }
 
 def get_job_template_id():
