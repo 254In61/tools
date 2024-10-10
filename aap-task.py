@@ -31,6 +31,7 @@ payload = {
 def get_job_template_id():
     """
     Query the AAP API to get the job template ID by name.
+    To be worked on when I have time for this one
     """
     try:
         # Make a GET request to fetch job templates
@@ -81,8 +82,10 @@ def trigger_aap_job(job_template_id):
 
 if __name__ == "__main__":
     # Step 1: Get the job template ID by name
-    job_template_id = get_job_template_id()
-
+    # job_template_id = get_job_template_id()
+    
+    job_template_id = 830
+    
     # Step 2: Start the job if the template ID was found
     if job_template_id:
         trigger_aap_job(job_template_id)
