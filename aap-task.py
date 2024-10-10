@@ -4,8 +4,9 @@
 import requests,json,os
 
 aap_url  = os.getenv('CONTROLLER_HOST')
-username = os.getenv('CONTROLLER_USERNAME')
-password = os.getenv('CONTROLLER__HOST')
+# username = os.getenv('CONTROLLER_USERNAME')
+# password = os.getenv('CONTROLLER__HOST')
+api_token = os.getenv('CONTROLLER_TOKEN')
 job_template_id=833
 
 # Ansible Automation Platform (AAP) details
@@ -16,7 +17,7 @@ api_url = f"{aap_url}/api/v2/job_templates/{job_template_id}/launch/"
 
 
 headers = {
-    # "Authorization": f"Bearer {API_TOKEN}",
+    "Authorization": f"Bearer {api_token}",
     "Content-Type": "application/json"
 }
 
@@ -32,9 +33,9 @@ payload = {
 def trigger_aap_job():
     try:
         # Make the API POST request to launch the job template
-        # response = requests.post(API_URL, headers=headers, data=json.dumps(payload), verify=False)
+        response = requests.post(api_url, headers=headers, data=json.dumps(payload), verify=False)
         
-        response = requests.post(api_url, auth=(username, password), headers = headers, data=json.dumps(payload), verify=False)
+        # response = requests.post(api_url, auth=(username, password), headers = headers, data=json.dumps(payload), verify=False)
         # Check for successful response
         if response.status_code == 201:
             print("Job template triggered successfully!")
